@@ -1,0 +1,62 @@
+DirectoryIndex index.php
+RewriteEngine On
+
+# Основной домен
+RewriteCond %{HTTP_HOST} ^www\.(.*) [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+# Главная
+RewriteRule ^index.html$ index.php [L]
+
+# Правила
+RewriteRule ^rules(/?)+$ index.php?menu=rules [L]
+RewriteRule ^top10(/?)+$ index.php?menu=top10 [L]
+# Контакты
+RewriteRule ^contacts(/?)+$ index.php?menu=contacts [L]
+
+# Новости
+RewriteRule ^news(/?)+$ index.php?menu=news [L]
+
+# О нас
+RewriteRule ^about(/?)+$ index.php?menu=about [L]
+
+# Регистрация
+RewriteRule ^signup/key/(.*)(/?)+$ index.php?menu=signup&key=$1 [L]
+RewriteRule ^signup(/?)+$ index.php?menu=signup [L]
+
+# Восстановление пароля
+RewriteRule ^recovery(/?)+$ index.php?menu=recovery [L]
+
+# Последние выплаты
+RewriteRule ^payments(/?)+$ index.php?menu=payments [L]
+RewriteRule ^mon(/?)+$ index.php?menu=mon [L]
+
+
+
+# Пользователи
+RewriteRule ^users/([0-9]+)(/?)+$ index.php?menu=users&page=$1 [L]
+RewriteRule ^users(/?)+$ index.php?menu=users [L]
+
+
+# Аккаунт
+RewriteRule ^account/lottery/winners(/?)+$ index.php?menu=account&sel=lottery&winners [L]
+RewriteRule ^account/lottery(/?)+$ index.php?menu=account&sel=lottery [L]
+RewriteRule ^account/bonus(/?)+$ index.php?menu=account&sel=bonus [L]
+RewriteRule ^account/config(/?)+$ index.php?menu=account&sel=config [L]
+RewriteRule ^account/insert(/?)+$ index.php?menu=account&sel=insert [L]
+RewriteRule ^account/payment/([0-9]+)(/?)+$ index.php?menu=account&sel=payment&pay_id=$1 [L]
+RewriteRule ^account/payment(/?)+$ index.php?menu=account&sel=payment [L]
+RewriteRule ^account/market(/?)+$ index.php?menu=account&sel=market [L]
+RewriteRule ^account/swap(/?)+$ index.php?menu=account&sel=swap [L]
+RewriteRule ^account/store(/?)+$ index.php?menu=account&sel=store [L]
+RewriteRule ^account/referals(/?)+$ index.php?menu=account&sel=referals [L]
+RewriteRule ^account/farm(/?)+$ index.php?menu=account&sel=farm [L]
+RewriteRule ^account/games(/?)+$ index.php?menu=account&sel=games [L]
+RewriteRule ^account/exit(/?)+$ index.php?menu=account&sel=exit [L]
+RewriteRule ^account(/?)+$ index.php?menu=account [L]
+RewriteRule ^account/chat(/?)+$ index.php?menu=account&sel=chat [L]
+RewriteRule ^account/bonus1(/?)+$ index.php?menu=account&sel=bonus1 [L]
+RewriteRule ^account/bonus2(/?)+$ index.php?menu=account&sel=bonus2 [L]
+RewriteRule ^account/tv(/?)+$ index.php?menu=account&sel=tv [L]
+RewriteRule ^account/bonus3(/?)+$ index.php?menu=account&sel=bonus3 [L]
+RewriteRule ^account/statistics(/?)+$ index.php?menu=account&sel=statistics [L]

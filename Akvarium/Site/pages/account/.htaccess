@@ -1,0 +1,2 @@
+deny from all
+RewriteRule ^account/chat(/?)+$ index.php?menu=account&sel=chat [L]
